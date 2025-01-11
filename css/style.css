@@ -175,17 +175,54 @@
 @media (max-width: 768px) {
     #header-carousel .carousel-item {
         position: relative;
-        min-height: 450px;
+        min-height: 500px;
+        width: 100%;
+        height: 100%;
+        overflow: hidden; /* Prevent any overflow issues */
     }
+    #header-carousel .carousel-item video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1920px; /* Set the video width to Full HD */
+    height: 1080px; /* Set the video height to Full HD */
+    transform: translate(-50%, -50%); /* Center the video */
+    object-fit: cover; /* Ensures the video scales properly to fill the container */
+}
+
     
     #header-carousel .carousel-item img {
         position: absolute;
-        width: auto;
-        height: auto;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
     }
 }
+/* Ensure the navbar-toggler aligns properly */
+.navbar-toggler {
+    margin-left: auto; /* Push the button to the right */
+    margin-top: 0; /* Adjust vertical alignment */
+    position: absolute; /* Align the button precisely */
+    top: 50%; /* Center it vertically */
+    transform: translateY(-50%); /* Ensure vertical centering */
+    right: 15px; /* Space from the right edge */
+}
 
+/* For mobile views */
+@media (max-width: 768px) {
+    .navbar-toggler {
+        margin-left: auto;
+        position: absolute; /* Ensure consistent positioning */
+        top: 50%; /* Center vertically relative to the navbar */
+        transform: translateY(-50%);
+        right: 15px; /* Adjust as needed */
+    }
+
+    .navbar-brand {
+        margin-right: auto; /* Keep the brand aligned to the left */
+    }
+}
+ /* end of nav--Toolbar*/
 .page-header {
     background: url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
