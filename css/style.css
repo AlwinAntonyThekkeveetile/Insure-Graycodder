@@ -223,7 +223,7 @@
         position: absolute; /* Ensure consistent positioning */
         top: 50%; /* Center vertically relative to the navbar */
         transform: translateY(-50%);
-        right: 10px; /*Space Between the logo Text and drawer.......................... */
+        right: 7px; /*Space Between the logo Text and drawer.......................... */
     }
 
     .navbar-brand {
