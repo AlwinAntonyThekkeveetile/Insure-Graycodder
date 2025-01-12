@@ -86,6 +86,7 @@
 
 .navbar .navbar-brand img {
     max-height: 60px;
+    margin-right: auto;
 }
 
 .navbar .navbar-nav .nav-link {
@@ -198,16 +199,23 @@
         object-fit: cover;
     }
 }
+
 /* Ensure the navbar-toggler aligns properly */
 .navbar-toggler {
-    margin-left: auto; /* Push the button to the right */
-    margin-top: 0; /* Adjust vertical alignment */
-    position: absolute; /* Align the button precisely */
-    top: 50%; /* Center it vertically */
-    transform: translateY(-50%); /* Ensure vertical centering */
-    right: 15px; /* Space from the right edge */
+    margin-left: 10px;
+    position: absolute; /* Align properly within the navbar */
+    top: 50%; /* Vertically centered */
+    right: 15px; /* Adjust right space */
+    transform: translateY(-50%); /* Center */
+    z-index: 1050; /* Ensure it remains above other content */
 }
-
+.navbar-collapse {
+    position: absolute;
+    top: 100%;
+    right: 0; /* This Fixed Error The drawer down */
+    left: 0;
+    z-index: 1040; /* Keep it above carousel content */
+}
 /* For mobile views */
 @media (max-width: 768px) {
     .navbar-toggler {
@@ -215,7 +223,7 @@
         position: absolute; /* Ensure consistent positioning */
         top: 50%; /* Center vertically relative to the navbar */
         transform: translateY(-50%);
-        right: 15px; /* Adjust as needed */
+        right: 5px; /*Space Between the logo Text and drawer */
     }
 
     .navbar-brand {
