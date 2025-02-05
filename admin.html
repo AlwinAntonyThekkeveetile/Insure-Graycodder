@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Template Stylesheet -->
+    <link href="css/styleadmin.css" rel="stylesheet" />
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
@@ -116,13 +121,18 @@
     </script>
 </head>
 <body>
-    <h2>Admin Dashboard</h2>
-    <input type="text" id="title" placeholder="Video Title">
-    <input type="text" id="youtubeLink" placeholder="YouTube Video Link">
-    <button onclick="addVideo()">Add Video</button>
-    <button onclick="logout()">Logout</button>
+    <div class="container">
+        <h2>Admin Dashboard</h2>
+        <div class="form-container">
+            <input type="text" id="title" placeholder="Video Title">
+            <input type="text" id="youtubeLink" placeholder="YouTube Video Link">
+            <button onclick="addVideo()">Add Video</button>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <h2>Manage Videos</h2>
+        <div id="blogContainer"></div>
+    </div>
     
-    <h2>Manage Videos</h2>
-    <div id="blogContainer"></div>
 </body>
 </html>
