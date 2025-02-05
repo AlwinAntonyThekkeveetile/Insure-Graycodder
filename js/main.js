@@ -64,4 +64,5 @@
     
 })(jQuery);
 
+// For blog section firebase//
 

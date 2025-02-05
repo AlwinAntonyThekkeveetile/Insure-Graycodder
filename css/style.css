@@ -79,15 +79,19 @@
 
 
 /*** Navbar ***/
+/*** Navbar ***/
 .navbar.sticky-top {
     top: -100px;
     transition: .5s;
 }
+
 .navbar-brand h1 {
-            font-size: 24px; /* Adjust the size of SheroAlliances text */
-            font-weight: 500; /* Adjust the font weight */
-            margin: 0; /* Remove extra margin */
-        }
+    font-size: 24px; /* Adjusted the font size */
+    font-weight: 500;
+    margin: 0;
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
 .navbar .navbar-brand img {
     max-height: 60px;
     margin-right: auto;
@@ -115,9 +119,14 @@
     margin-left: 8px;
 }
 
+/* Fix the Navbar for Mobile */
 @media (max-width: 991.98px) {
     .navbar .navbar-brand img {
         max-height: 45px;
+    }
+
+    .navbar-brand h1 {
+        font-size: 18px; /* Reduce font size on mobile */
     }
 
     .navbar .navbar-nav {
@@ -130,6 +139,7 @@
     }
 }
 
+/* Fix Dropdown Visibility */
 @media (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
         display: block;
@@ -149,8 +159,7 @@
         opacity: 1;
     }
 }
-
-
+/* Fix Navbar end */
 /*** Header ***/
 .carousel-caption {
     top: 0;
@@ -204,37 +213,7 @@
     }
 }
 
-/* Ensure the navbar-toggler aligns properly */
-.navbar-toggler {
-    margin-left: 10px;
-    position: absolute; /* Align properly within the navbar */
-    top: 50%; /* Vertically centered */
-    right: 15px; /* Adjust right space */
-    transform: translateY(-50%); /* Center */
-    z-index: 1050; /* Ensure it remains above other content */
-}
-.navbar-collapse {
-    position: absolute;
-    top: 100%;
-    right: 0; /* This Fixed Error The drawer down */
-    left: 0;
-    z-index: 1040; /* Keep it above carousel content */
-}
-/* For mobile views */
-@media (max-width: 768px) {
-    .navbar-toggler {
-        margin-left: auto;
-        position: absolute; /* Ensure consistent positioning */
-        top: 50%; /* Center vertically relative to the navbar */
-        transform: translateY(-50%);
-        right: 7px; /*Space Between the logo Text and drawer.......................... */
-    }
 
-    .navbar-brand {
-        margin-right: auto; /* Keep the brand aligned to the left */
-    }
-}
- /* end of nav--Toolbar*/
 .page-header {
     background: url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
