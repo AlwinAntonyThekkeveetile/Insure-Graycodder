@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>Admin Login</title>
+    <link href="css/stylelogin.css" rel="stylesheet" />
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
@@ -23,6 +24,16 @@
         window.login = function () {
             const email = document.getElementById("email").value;
             const password = document.getElementById("password").value;
+            const errorMsg = document.getElementById("error-msg");
+
+            // Check if fields are empty
+            if (email === "" || password === "") {
+                errorMsg.innerText = "⚠️ Please fill in both Email and Password fields.";
+                errorMsg.style.display = "block";
+                return;
+            }
+
+             // Firebase authentication
 
             signInWithEmailAndPassword(auth, email, password)
                 .then(() => {
@@ -35,9 +46,21 @@
     </script>
 </head>
 <body>
-    <h2>Admin Login</h2>
-    <input type="email" id="email" placeholder="Email">
-    <input type="password" id="password" placeholder="Password">
+    <div class="container">
+        <h2>Admin Login</h2>
+
+        <!-- Error Message Display -->
+        <div id="error-msg" class="error-msg"></div>
+
+        <!-- Email Input -->
+        <div class="input-group">
+            <input type="email" id="email" placeholder="Email">
+        </div>
+
+        <!-- Password Input -->
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password">
+        </div>
     <button onclick="login()">Login</button>
 </body>
 </html>
